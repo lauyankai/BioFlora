@@ -13,4 +13,4 @@
 | PRAVINRAJ A/L SIVABATHI | A23CS0171 | pravinraj04@graduate.utm.my |
 
 > [!NOTE]
-> The comment system needs to be configured by oneself, please refer to [Waline](https://waline.js.org/) Change `src\components\Comment.astro`.
+> For a better reading experience, please visit -> https://bioflora.vercel.app
