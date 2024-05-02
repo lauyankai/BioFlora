@@ -7,7 +7,7 @@
 | Name | Matrix No | Email |
 | :---: | :---: | :---: |
 | LAU YAN KAI | A23CS0098 | lauyankai@graduate.utm.my |
-| Chew Chiu Xian | A23CS0061 | chewchiuxian@graduate.utm.my |
+| CHEW CHIU XIAN | A23CS0061 | chewchiuxian@graduate.utm.my |
 | DANISH AFIQ BIN ROSHISHAM | B22EC0004 | danishafiq@graduate.utm.my |
 | DHESHIEGHAN A/L SARAVANA MOORTHY | A23CS0072 | dheshieghan@graduate.utm.my |
 | PRAVINRAJ A/L SIVABATHI | A23CS0171 | pravinraj04@graduate.utm.my |

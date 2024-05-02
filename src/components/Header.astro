@@ -81,12 +81,19 @@ import { SITE_TITLE } from "../consts";
     const checkbox = document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
 
-    checkbox.addEventListener("click", function () {
-      if (this.checked) {
-        menu.classList.add("open"); // 添加一个类来显示菜单
+    if (checkbox) {
+      checkbox.addEventListener("click", function () {
+        if ((checkbox as HTMLInputElement).checked) {
+          (menu as HTMLElement).classList.add("open"); // 添加一个类来显示菜单
+        } else {
+          (menu as HTMLElement).classList.remove("open"); // 移除类来隐藏菜单
+        }
+      });
+    }
+      if ((checkbox as HTMLInputElement).checked) {
+        (menu as HTMLElement).classList.add("open"); // 添加一个类来显示菜单
       } else {
-        menu.classList.remove("open"); // 移除类来隐藏菜单
+        (menu as HTMLElement).classList.remove("open"); // 移除类来隐藏菜单
       }
     });
-  });
 </script>
