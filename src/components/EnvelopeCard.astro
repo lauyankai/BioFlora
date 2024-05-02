@@ -12,7 +12,7 @@ const {
   target = "_blank",
 } = Astro.props;
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
-const displayDate = dayjs(pubDate).format("ddd MMM DD YYYY");
+const displayDate = dayjs(pubDate).format("DD MMM YYYY (ddd)");
 ---
 
 <div class="envelope-back card bg-base-100 shadow-xl">
