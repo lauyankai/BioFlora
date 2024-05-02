@@ -1,6 +1,6 @@
 # 🤖 HCI Group 6 : 1Malaysia 🤖
 
-![view](./GroupPic.jpg)
+![view](./public/GroupPic.jpg)
 
 ## ✒️ Group Member Information
 
