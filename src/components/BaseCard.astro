@@ -34,27 +34,12 @@ const displayDate = dayjs(pubDate).format("DD MMM YYYY (ddd)");
     {
       isBlog && (
         <>
-          <h1 id="h1">{title}</h1>
-          <div class="info">
+          <h1 style="font-family:Freeman" id="h1">{title}</h1>
+          <div class="info" style="font-family:Arial">
             {displayDate && (
               <div class="badge badge-neutral">{displayDate}</div>
             )}
             {badge && <div class="badge badge-primary">{badge}</div>}
-            <div class="tags">
-              <code>Tag: </code>
-              {tags &&
-                tags.map((tag) => (
-                  <>
-                    <a
-                      href={`${tag_url}/${tag}`}
-                      class="btn btn-xs btn-secondary"
-                    >
-                      {tag}
-                    </a>
-                    <span>&thinsp;</span>
-                  </>
-                ))}
-            </div>
           </div>
           <hr />
         </>

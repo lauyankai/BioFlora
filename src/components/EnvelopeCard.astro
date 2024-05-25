@@ -33,29 +33,16 @@ const displayDate = dayjs(pubDate).format("DD MMM YYYY (ddd)");
   </div>
   <div class="envelope-card card bg-base-100">
     <div class="envelope-info px-6 py-3">
-      <a href={url} target={target} class="envelope-title">
+      <a href={url} target={target} class="envelope-title" style="font-family:Freeman">
+        <p> </p>
         {title}
       </a>
+      <p> </p>
       <div class="info">{desc}</div>
-      <div class="info">
+      <div class="info" style="font-family:Arial">
+        <p> </p>
         {displayDate && <div class="badge badge-neutral">{displayDate}</div>}
         {badge && <div class="badge badge-primary">{badge}</div>}
-        <div class="tags">
-          <code>Tag: </code>
-          {
-            tags &&
-              tags.map((tag) => (
-                <>
-                  <a
-                    href={`${tag_url}/${tag}`}
-                    class="btn btn-xs btn-secondary"
-                  >
-                    {tag}
-                  </a>
-                  <span>&thinsp;</span>
-                </>
-              ))
-          }
         </div>
       </div>
     </div>
