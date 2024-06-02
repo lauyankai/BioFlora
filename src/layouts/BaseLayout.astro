@@ -35,6 +35,13 @@ const {
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
+    <div class="container"><div class="line"></div></div>
+    <script>
+      var loader = document.getElementById("container");
+      window.addEventListener("load", function () {
+        loader.style.display = "none";
+      });
+    </script>
     <script src="../scripts/copybutton.mjs"></script>
     <Header title={SITE_TITLE} />
     <main class="main">
@@ -53,4 +60,3 @@ const {
     <ThemeIcon />
   </body>
 </html>
-

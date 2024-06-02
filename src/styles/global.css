@@ -7,6 +7,168 @@ html {
 	padding: 0px;
 }
 
+.container {
+	--uib-size: 28;
+	--uib-color: black;
+	--uib-speed: 3.5s;
+	--uib-stroke: 4;
+	--uib-mult: calc(var(--uib-size) / var(--uib-stroke));
+	--uib-stroke-px: calc(var(--uib-stroke) * 1px);
+	--uib-size-px: calc(var(--uib-size) * 1px);
+	position: relative;
+	height: var(--uib-size-px);
+	width: var(--uib-size-px);
+}
+
+.line {
+	position: absolute;
+	top: calc(50% - var(--uib-stroke-px) / 2);
+	left: calc(50% - var(--uib-stroke-px) / 2);
+	width: var(--uib-stroke-px);
+	height: var(--uib-stroke-px);
+	background-color: var(--uib-color);
+	animation: center-line var(--uib-speed) ease infinite;
+	transition: background-color 0.3s ease;
+}
+
+.container::before,
+.container::after {
+	content: '';
+	position: absolute;
+	width: var(--uib-stroke-px);
+	height: var(--uib-stroke-px);
+	background-color: var(--uib-color);
+	animation: explore var(--uib-speed) ease infinite;
+	transition: background-color 0.3s ease;
+}
+
+.container::after {
+	animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+@keyframes center-line {
+
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		transform: scaleX(1) scaleY(1);
+	}
+
+	12.5%,
+	62.5% {
+		transform: scaleX(var(--uib-mult)) scaleY(1);
+	}
+
+	37.5%,
+	87.5% {
+		transform: scaleX(1) scaleY(var(--uib-mult));
+	}
+}
+
+@keyframes explore {
+
+	0%,
+	100% {
+		transform: scaleX(1) scaleY(1) translate(0%, 0%);
+		transform-origin: top left;
+		top: 0;
+		left: 0;
+	}
+
+	12.5% {
+		transform: scaleX(var(--uib-mult)) scaleY(1) translate(0%, 0%);
+		transform-origin: top left;
+		top: 0;
+		left: 0;
+	}
+
+	12.50001% {
+		transform: scaleX(var(--uib-mult)) scaleY(1) translate(0%, 0%);
+		transform-origin: top right;
+		top: 0;
+		left: initial;
+		right: 0;
+	}
+
+	25% {
+		transform: scaleX(1) scaleY(1) translate(0%, 0%);
+		transform-origin: top right;
+		top: 0;
+		left: initial;
+		right: 0;
+	}
+
+	37.5% {
+		transform: scaleX(1) scaleY(var(--uib-mult)) translate(0%, 0%);
+		transform-origin: top right;
+		top: 0;
+		left: initial;
+		right: 0;
+	}
+
+	37.5001% {
+		transform: scaleX(1) scaleY(var(--uib-mult)) translate(0%, 0%);
+		transform-origin: bottom right;
+		top: initial;
+		bottom: 0;
+		left: initial;
+		right: 0;
+	}
+
+	50% {
+		transform: scaleX(1) scaleY(1) translate(0%, 0%);
+		transform-origin: bottom right;
+		top: initial;
+		bottom: 0;
+		left: initial;
+		right: 0;
+	}
+
+	62.5% {
+		transform: scaleX(var(--uib-mult)) scaleY(1) translate(0%, 0%);
+		transform-origin: bottom right;
+		top: initial;
+		bottom: 0;
+		left: initial;
+		right: 0;
+	}
+
+	62.5001% {
+		transform: scaleX(var(--uib-mult)) scaleY(1) translate(0%, 0%);
+		transform-origin: bottom left;
+		top: initial;
+		bottom: 0;
+		left: 0;
+	}
+
+	75% {
+		transform: scaleX(1) scaleY(1) translate(0%, 0%);
+		transform-origin: bottom left;
+		top: initial;
+		bottom: 0;
+		left: 0;
+	}
+
+	87.5% {
+		transform: scaleX(1) scaleY(var(--uib-mult)) translate(0%, 0%);
+		transform-origin: bottom left;
+		top: initial;
+		bottom: 0;
+		left: 0;
+	}
+
+	87.5001% {
+		transform: scaleX(1) scaleY(var(--uib-mult)) translate(0%, 0%);
+		transform-origin: top left;
+		top: 0;
+		left: 0;
+	}
+}
+
+
+
 @font-face {
 	font-family: 'Cascadia';
 	src: url('/fonts/CascadiaCode.woff2') format('woff2');
@@ -22,7 +184,7 @@ html {
 	font-display: swap;
 	src: url(https://fonts.gstatic.com/s/berkshireswash/v20/ptRRTi-cavZOGqCvnNJDl5m5XmN_pM4zXX4.woff2) format('woff2');
 	unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
+}
 
 @font-face {
 	font-family: 'Berkshire Swash';
@@ -31,8 +193,8 @@ html {
 	font-display: swap;
 	src: url(https://fonts.gstatic.com/s/berkshireswash/v20/ptRRTi-cavZOGqCvnNJDl5m5XmN_qs4z.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  
+}
+
 @font-face {
 	font-family: 'Freeman';
 	font-style: normal;
@@ -40,8 +202,8 @@ html {
 	font-display: swap;
 	src: url(https://fonts.gstatic.com/s/freeman/v1/S6u9w4NGQiLN8nh-SwaPGR_p.woff2) format('woff2');
 	unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
- 
+}
+
 @font-face {
 	font-family: 'Freeman';
 	font-style: normal;
@@ -49,7 +211,7 @@ html {
 	font-display: swap;
 	src: url(https://fonts.gstatic.com/s/freeman/v1/S6u9w4NGQiLN8nh-SwiPGQ.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+}
 
 body {
 	font-family: sans-serif;

@@ -17,6 +17,7 @@
     "astro": "^4.7.0",
     "dayjs": "^1.11.11",
     "katex": "^0.16.10",
+    "ldrs": "^1.0.2",
     "prismjs": "^1.29.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
@@ -27,4 +28,3 @@
     "tailwindcss": "^3.4.3"
   }
 }
-
