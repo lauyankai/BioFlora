@@ -5,6 +5,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import { infinity } from "ldrs";
 import { ViewTransitions } from "astro:transitions";
 import {
   SITE_TITLE,
@@ -35,12 +36,9 @@ const {
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
-    <div class="container"><div class="line"></div></div>
-    <script>
-      var loader = document.getElementById("container");
-      window.addEventListener("load", function () {
-        loader.style.display = "none";
-      });
+    <script> 
+    import { infinity } from 'ldrs' 
+    infinity.register()
     </script>
     <script src="../scripts/copybutton.mjs"></script>
     <Header title={SITE_TITLE} />
